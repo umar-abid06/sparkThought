@@ -12,7 +12,7 @@ export class AuthService {
     this.account = new Account(this.client);
   }
 
-  async createAccount(email, password) {
+  async createAccount({ email, password }) {
     try {
       const userAccount = await this.account.create(
         ID.unique(),
@@ -28,7 +28,7 @@ export class AuthService {
       throw error;
     }
   }
-  async login(email, password) {
+  async login({ email, password }) {
     try {
       return await this.account.createEmailSession(email, password);
     } catch (error) {
