@@ -66,7 +66,7 @@ class DatabaseService {
 
   async getPost(slug) {
     try {
-      return await this.databases.deleteDocument(
+      return await this.databases.getDocument(
         config.appwriteDatabaseId,
         config.appwriteCollectionId,
         slug
